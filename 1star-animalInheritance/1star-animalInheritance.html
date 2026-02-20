@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>PDM2 - W2P2 - 1 Star: Animals Inheritance</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="./lib/main-styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+    <script src="./lib/libraries/p5.min.js"></script>
+    <script src="./lib/libraries/p5.sound.min.js"></script>
+  </head>
+
+  <body>
+    <h1>1 Star - Animals Inheritance</h1>
+    <p><strong>There is no visual output for this exercise. Use the browser console.</strong></p>
+    <p>Your sketch:</p>
+    <div class="guidance">
+        <h2>Instructions</h2>
+        <div>
+            <p>We are continuing the animal theme today. You will be creating a 
+                hierarchy of classes to represent different animals as shown in the diagram 
+                below. This exercise will not have any visual output—you 
+                will need to check your code using the browser console.</p>
+            <p>sketch.js contains a different version of an <code>Animal</code> class, and a 
+                child class, <code>FurryAnimal</code>. Take a moment to 
+                read the code. Familiarise yourself with the class attributes and methods in both 
+                classes as you will need these when implementing more inheriting classes.
+            </p>
+            <h3>Task 1: <code>Bird</code></h3>
+            <p>Add a new subclass (another term for a child class) of <code>Animal</code> called <code>Bird</code>, which has 
+            an additional private attribute <code>#beakType</code> (string). Add a getter for <code>#beakType</code> called <code>getBeakType()</code>. 
+            The parent class has a method called <code>decreaseHealth()</code>, which reduces the animal's health level 
+        by 1. Override this method in the <code>Bird</code> class. The <code>Bird</code> version of <code>decreaseHealth()</code> should 
+    reduce the health level by a larger amount (e.g. 5).</p>
+            <h3>Task 2: Extending <code>FurryAnimal</code></h3>
+            <p>Add two new classes called <code>Cat</code> and <code>Dog</code>. Both classes should be 
+            subclasses of <code>FurryAnimal</code>. These classes do not have any new attributes but they 
+        will need some new methods.</p>
+            <p>In the <code>Cat</code> class:</p>
+            <ul>
+                <li>Add a new method called <code>jumpAt()</code>, which takes one parameter, a bird. In this method, the cat should jump at the bird by moving to its location, which should cause the bird's health to decrease.</li>
+                <li>Override the <code>call()</code> method so that it simply returns "meow" for cats.</li>
+            </ul>
+            <p>In the <code>Dog</code> class, add a new method called <code>barkAt()</code>, which takes one parameter, a cat. If the cat is too close to the dog (you can decide how close is too close), print "Woof!" or something similar to the console.</p>
+            <h3>Task 3: Test your code</h3>
+            <p>A check file is provided for this exercise. It will make sure your code matches the specification above. However, it's always good to try out your code yourself. Try creating instances of 
+                each class in the <code>setup()</code> function provided and test them by calling methods and printing the results to the console. There are two 
+                examples of this in the code already.
+            </p>
+            <p>Class hierarchy:</p>
+            <img src="./assets/UML_1.png" width="400" alt="A class diagram with Animal as the super class. Animal is inherited by FurryAnimal and Bird. FurryAnimal is inherited by Cat and Dog."/>
+            <br/>
+            <!-- <p>Expected output:</p>  
+            <p>
+                <video width="600" height="400" controls>
+                    <source src="./assets/1star-animals.mov" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </p> -->
+        </div>
+        <div>
+            <button class="btn btn-primary hint" type="button" data-bs-toggle="collapse" data-bs-target="#hint" aria-expanded="false" aria-controls="hint">
+                Hint
+            </button>
+            <div class="collapse" id="hint">
+                <div class="card card-body">
+                    <p>You should not need to make any changes to the existing classes!</p>
+                    <p>It is a good idea to have the example code from lecture on hand as all tasks are very similar 
+                        to the examples covered in lecture.
+                    </p>
+                    <p>To implement the <code>Bird</code> method <code>decreaseHealth()</code>, you need to change the value of the attribute <code>#healthLevel</code>. As this 
+                    attribute is private to the parent class and therefore cannot be accessed directly in <code>Bird</code>, consider how you can 
+                call the super class (parent class) version of the <code>decreaseHealth()</code> method to achieve the desired result.</p>
+                    <p>You may find the p5.js <code>dist()</code> function helpful when implementing the <code>Dog</code> method <code>barkAt()</code>.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="sketch.js"></script>
+  </body>
+</html>

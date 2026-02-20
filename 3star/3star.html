@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>PDM2 - W2P2 - 3 Star</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="./lib/main-styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+    <script src="./lib/libraries/p5.min.js"></script>
+    <script src="./lib/libraries/p5.sound.min.js"></script>
+  </head>
+
+  <body>
+    <h1>3 Star - Exercise</h1>
+    <p>Your sketch:</p>
+    <div class="guidance">
+        <h2>Instructions</h2>
+        <div>
+            <p>Continuing to build on the exercises so far, your task is to add visual and animated elements to your classes in order to create 
+                an interactive scene. Here are some recommendations (feel free to deviate from these):
+            </p>
+            <ul>
+                <li>Each animal should have an image, like last practical. You may decide whether this should be passed in 
+                    through the constructor or whether each child class should always use the same image.
+                </li>
+                <li>Each type of animal should move in a way that is appropriate. To take full advantage of polymorphism, you can use a single function name that is 
+                    common to all subclasses (e.g. move() rather than walk() or fly()). Alternatively, you can choose method names that are more appropriate 
+                    to the way animals of a specific subclass move. Just make sure you don't have flying cats and dogs, unless that is a deliberate design choice.
+                </li>
+                <li>Show each animal's call in the sketch (e.g. by adding a speech bubble, or playing a sound).</li>
+                <li>Add more animals to the hierarchy e.g. snake, whale, elephant, tiger. How can you build upon and extend 
+                    the existing classes?
+                </li>
+            </ul>
+        </div>
+        <div>
+            <button class="btn btn-primary hint" type="button" data-bs-toggle="collapse" data-bs-target="#hint" aria-expanded="false" aria-controls="hint">
+                Hint
+            </button>
+            <div class="collapse" id="hint">
+                <div class="card card-body">
+                    <p>For clues on how to add images, revisit last practical (or the solution code).</p>
+                    <p>When adding new attributes and methods to a class hierarchy, the key to good OOP is to always add new 
+                        elements at the highest point in the hierarchy that makes sense. For example, as all classes in the hierarchy 
+                        should have an image, it would make sense to add this component to the <code>Animal</code> class. That way, 
+                        you don't have to repeat the code across multiple classes.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="sketch.js"></script>
+  </body>
+</html>
