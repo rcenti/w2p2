@@ -27,6 +27,7 @@ class Animal {
      * @param {number} health A number between 0 and 100
      * @param {number} age 
      */
+
     constructor(name, health, age) {
         this.#name = name;
         this.#healthLevel = health;
@@ -108,6 +109,23 @@ class Animal {
     }
 }
 
+class bird extends Animal {
+    #beakType;
+    #healthLevel;
+    
+    constructor(beakType){
+        this.#beakType = beakType;
+    }
+
+ decreaseHealth() {
+        this.#healthLevel = Math.max(0, this.#healthLevel - 5);
+    }
+
+    Get() { 
+    return this.getBeakType();
+    }
+}
+
 
 /**
  * A subclass representing animals with fur
@@ -127,5 +145,36 @@ class FurryAnimal extends Animal {
      */
     getFurColour() {
         return this.#furColour;
+    }
+
+}
+
+class Cat extends FurryAnimal {
+
+    constructor(){
+    }
+
+    jumpAt(bird) {
+      this.moveX(bird.getX)
+    }
+
+    call() {
+        return `meow`;
+    }
+}
+
+
+class Dog extends FurryAnimal {
+
+    constructor(x, y) {
+        super(x, y);
+        this.posX = x;
+    }
+
+    barkAt(targetCat) {
+        let distance = Maths.abs(this.posX - targetCat.posX);
+        if (distance > 50){
+            return 'woof!';
+        }
     }
 }
